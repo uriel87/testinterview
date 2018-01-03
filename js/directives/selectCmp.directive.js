@@ -17,16 +17,14 @@ app.directive('selectComponent',['$window','hostingHousesService', function ($wi
         },
         link: function($scope, $element, $attributes) {
 
-            $scope.itemSelected = function (item) {
-                $scope.item = item;
-            }
+            $scope.itemSelect = null;
 
-            var listItem = $element[0].getElementsByClassName("title-menu");
+            // var listItem = $element[0].getElementsByClassName("title-menu");
 
             // angular.element(listItem).bind('click', function(event){
             //     console.log("hhhhhhhhhhhhhhhhhhhhh")
             //     // this.siblings()[0].child(".list-item").css('display', 'block');
-            //     angular.element(listItem).next().css('display', 'block');
+            //     angular.element("title-menu").css('display', 'block');
             //     // angular.element(listItem).next().css('display', 'block');
             //
             // });
@@ -41,12 +39,12 @@ app.directive('selectComponent',['$window','hostingHousesService', function ($wi
             // //     }
             // });
 
-            angular.element($window).bind('click', function(event){
-                var queryResult = $element[0].querySelector('.list-item');
-                if(angular.element(queryResult).css('display') == 'block') {
-                    angular.element(queryResult).css('display', 'none');
-                }
-            });
+            // angular.element($window).bind('click', function(event){
+            //     var queryResult = $element[0].querySelector('.list-item');
+            //     if(angular.element(queryResult).css('display') == 'block') {
+            //         angular.element(queryResult).css('display', 'none');
+            //     }
+            // });
 
 
         }

@@ -103,6 +103,24 @@ visibility: hidden;}
 	clear: both;
 }
 
+.select-component{
+	max-height: 100px;
+	/*overflow: auto;*/
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.test{
+	max-height: 100px;
+	/*overflow: auto;*/
+	max-width: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 
 
 
