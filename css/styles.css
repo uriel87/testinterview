@@ -1,0 +1,109 @@
+html {
+	direction: rtl;
+	text-align: right;
+}
+
+.main {
+	padding: 10px;
+}
+
+
+.row {
+	margin-top:10px;
+}
+
+
+.col {
+	float: right;
+	min-height: 1px;
+	margin-left: 16px;
+}
+
+.col.col1 {
+	width: 100px;
+}
+
+.col.col2 {
+	width: 150px;
+}
+
+/* ------------  CLEARING  --
+This technique was originally developed by Tony Aslett,
+upgraded by Alex Robinson
+-------------------------- */
+
+.clearfix:after {
+content: ".";
+display: block;
+height: 0px;
+clear: both;
+visibility: hidden;}
+.clearfix {display: inline-table;}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+.clearboth {clear:both;}
+
+
+#nav {
+	margin-bottom: 10px;
+	float: right;
+	color: #666;
+}
+
+#nav li {
+	list-style-type: none;
+	cursor: pointer;
+}
+
+#nav a {
+	display: block;
+	padding: 5px 0;
+	text-decoration: none;
+	color: #666;
+	max-width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#nav .title-menu {
+	display: block;
+	padding: 5px;
+	font-size: 14px;
+}
+
+#nav li:hover ul { /* Display the dropdown on hover */
+	display: block;
+}
+
+#nav li:hover ul a { /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration: none;
+}
+
+#nav .list-item {
+	max-height: 100px;
+	overflow: auto;
+	max-width: 300px;
+	/*display: none;*/
+}
+
+.list-item li a {
+	font-size: 12px;
+}
+
+.show-nav {
+	display: block;
+}
+
+.item-selected{
+	clear: both;
+}
+
+
+
+
+

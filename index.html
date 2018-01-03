@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>UI Select</title>
+    <link rel='stylesheet' href='css/styles.css' />
+
+    <!--script-->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+      <script src="js/app.js"></script>
+
+      <!--services-->
+      <script src="/js/services/hostingHouses.service.js"></script>
+
+      <!--directive-->
+      <script src="/js/directives/selectCmp.directive.js"></script>
+
+      <!--controller-->
+      <script src="js/controllers/order.controller.js"></script>
+
+
+  </head>
+  <body ng-app="app">
+    <div class="main" ng-controller="orderCtl">
+      
+      <div class="row clearfix" id="uiselect1">
+        <!--// UI SELECT FIRST INSTANCE START //-->
+         <div class="col col1">
+             <select-component info="hotels"></select-component>
+         </div>
+        <!--// UI SELECT FIRST INSTANCE END //-->
+
+        <!--// UI SELECT SECOND INSTANCE START //-->
+         <div class="col col2">
+             <select-component info="hostels"></select-component>
+         </div>
+         <!--// UI SELECT SECOND INSTANCE END //-->         
+      </div>
+    </div>
+  </body>
+</html>
