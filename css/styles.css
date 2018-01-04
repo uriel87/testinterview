@@ -71,11 +71,6 @@ upgraded by Alex Robinson
 
 .clearboth {clear:both;}
 
-.selectOption {
-	width: 100%;
-	margin:auto 5px;
-}
-
 .bootstrap-select .dropdown-menu {
 	right:0px;
 }
