@@ -7,7 +7,7 @@ app.directive('bootselectpicker',['$window','hostingHousesService','$timeout', f
             $timeout(function() {
                 $('.selectpicker').selectpicker({
                     size: 3,
-                    width: "300px",
+                    width: "300px"
                 });
 
             });
