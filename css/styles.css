@@ -33,11 +33,11 @@ upgraded by Alex Robinson
 -------------------------- */
 
 .clearfix:after {
-content: ".";
-display: block;
-height: 0px;
-clear: both;
-visibility: hidden;}
+	content: ".";
+	display: block;
+	height: 0px;
+	clear: both;
+	visibility: hidden;}
 .clearfix {display: inline-table;}
 
 /* Hides from IE-mac \*/
@@ -47,81 +47,29 @@ visibility: hidden;}
 
 .clearboth {clear:both;}
 
-
-#nav {
-	margin-bottom: 10px;
-	float: right;
-	color: #666;
+.bootstrap-select .dropdown-menu {
+	right:0px;
 }
 
-#nav li {
-	list-style-type: none;
-	cursor: pointer;
-}
-
-#nav a {
-	display: block;
-	padding: 5px 0;
-	text-decoration: none;
-	color: #666;
-	max-width: 100px;
+.bootstrap-select .dropdown-menu span.text {
+	display: block !important;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-#nav .title-menu {
-	display: block;
-	padding: 5px;
-	font-size: 14px;
-}
-
-#nav li:hover ul { /* Display the dropdown on hover */
-	display: block;
-}
-
-#nav li:hover ul a { /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
-	text-decoration: none;
-}
-
-#nav .list-item {
-	max-height: 100px;
-	overflow: auto;
 	max-width: 300px;
-	/*display: none;*/
 }
 
-.list-item li a {
-	font-size: 12px;
+.bootstrap-select.btn-group .dropdown-menu li a {
+	text-align: right;
 }
 
-.show-nav {
-	display: block;
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+	text-align: right !important;
 }
 
-.item-selected{
-	clear: both;
+.bootstrap-select.btn-group .dropdown-toggle .caret {
+	left: 12px !important;
+	right: unset !important;;
 }
-
-.select-component{
-	max-height: 100px;
-	/*overflow: auto;*/
-	max-width: 300px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-.test{
-	max-height: 100px;
-	/*overflow: auto;*/
-	max-width: 10px;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-}
-
-
 
 
 

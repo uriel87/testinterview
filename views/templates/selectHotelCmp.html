@@ -1,23 +1,7 @@
 
+<select bootselectpicker class="select-component form-control selectpicker"
+        ng-model="itemSelected"
+        ng-options="item.name for item in dataList track by item.id">
+</select>
 
-<!--<select class="select-component" ng-model="itemSelected" ng-options="item as item.name for item in dataList" ng-change="selected(item)"></select>-->
-<!--<div class="test">-->
-    <select class="select-component"
-            ng-model="itemSelected"
-            elementSize
-            ng-options="item.name for item in dataList track by item.id">
-    </select>
-<!--</div>-->
-
-
-<!--<ul id="nav">-->
-    <!--<li class="title-menu"><a href="#" title="select-title">{{dataList[0].name}}</a></li>-->
-    <!--<li>-->
-        <!--<ul class="list-item">-->
-            <!--<li ng-repeat="item in dataList" ng-click="itemSelected(item)">-->
-                <!--<a href="#">{{item.name}}</a>-->
-            <!--</li>-->
-        <!--</ul>-->
-    <!--</li>-->
-<!--</ul>-->
-<p class="item-selected">id: {{itemSelected.id}}, name: {{itemSelected.name}}</p>
+<p class="item-selected">id: {{itemSelected.id}},  name: {{itemSelected.name}}</p>
