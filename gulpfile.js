@@ -4,34 +4,39 @@ var gulp = require('gulp'),
     useref = require('gulp-useref'),
     uglify = require('gulp-uglify'),
     gulpIf = require('gulp-if'),
-    browserSync = require('browser-sync')
+    browserSync = require('browser-sync'),
+    del = require('del');
+
 
 
 gulp.task('browserSync', function() {
     browserSync({
         server: {
-            baseDir: '/'
+            baseDir: './'
         },
     })
 });
 
 gulp.task('watch', ['browserSync'], function (){
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('**/*.html', browserSync.reload);
+    gulp.watch('./**/*.html', browserSync.reload);
     gulp.watch('./js/**/*.js', browserSync.reload);
-    console.log('watch task finished');
-
+    gulp.watch('./css/**/*.css', browserSync.reload);
 });
 
 gulp.task('useref', function(){
     return gulp.src('**/*.html')
         .pipe(useref())
-        .pipe(gulpIf('*.js', uglify()))
+        .pipe(gulpIf('./js/**/*.js', uglify()))
         // Minifies only if it's a CSS file
-        .pipe(gulpIf('*.css', cssnano()))
+        .pipe(gulpIf('./css/*.css', cssnano()))
         .pipe(gulp.dest('dist'))
-    console.log('useref task finished');
+});
+
+gulp.task('clean:dist', function() {
+    return del.sync(['dist/**/*', '!dist/images', '!dist/images/**/*']);
 });
 
 gulp.task('default', ['watch', 'useref']);
+
 
