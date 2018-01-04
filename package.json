@@ -4,16 +4,20 @@
   "description": "test",
   "main": "index.js",
   "dependencies": {
+    "del": "^3.0.0",
     "express": "^4.16.2"
   },
   "devDependencies": {
     "browser-sync": "^2.23.2",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if-else": "^1.0.3",
     "gulp-uglify": "^3.0.0",
     "gulp-useref": "^3.1.4"
   },
   "scripts": {
+    "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
