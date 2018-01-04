@@ -1,5 +1,4 @@
 
-
 var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     useref = require('gulp-useref'),
@@ -11,7 +10,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('browserSync', function() {
-    browserSync({
+    browserSync.init({
         server: {
             baseDir: 'src'
         }
@@ -20,15 +19,17 @@ gulp.task('browserSync', function() {
 
 gulp.task('watch', ['browserSync'], function (){
     // Reloads the browser whenever HTML or JS files change
-    gulp.watch('src/*/.html', browserSync.reload);
-    gulp.watch('src/js/*/.js', browserSync.reload);
-    gulp.watch('src/css/*/.css', browserSync.reload);
+    gulp.watch('src/**/*.html', browserSync.reload);
+    gulp.watch('src/js/**/*.js', browserSync.reload);
+    gulp.watch('src/css/**/*.css', browserSync.reload);
 });
 
 gulp.task('useref', function(){
-    return gulp.src('src/*/.html')
+    console.log("build");
+    return gulp.src('src/*.html')
+        .pipe(gulp.src('src/**/*.html'))
         .pipe(useref())
-        .pipe(gulpIf('src/js/*/.js', uglify()))
+        .pipe(gulpIf('src/js/**/*.js', uglify()))
         // Minifies only if it's a CSS file
         .pipe(gulpIf('src/css/*.css', cssnano()))
         .pipe(gulp.dest('dist'))
