@@ -5,4 +5,7 @@
         <option value="">{{dataList[0].name}}</option>
 </select>
 
-<p>id: {{itemSelected.id}}<br>name: {{itemSelected.name}}</p>
+<div class="selectedContainer">
+        <p ng-if="itemSelected">id: {{itemSelected.id}}<br>name: {{itemSelected.name}}</p>
+        <p ng-if="!itemSelected">בחר מלון מהרשימה</p>
+</div>
