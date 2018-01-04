@@ -1,53 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-  <head>
+<head>
     <title>UI Select</title>
-    <link rel='stylesheet' href='css/styles.css' />
+    <link rel='stylesheet' href='css/styles.css'/>
 
     <!--script-->
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-      <script src="js/app.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-      <!--services-->
-      <script src="/js/services/hostingHouses.service.js"></script>
+    <script src="js/app.js"></script>
 
-      <!--directive-->
-      <script src="/js/directives/selectCmp.directive.js"></script>
-      <script src="/js/directives/bootsselectpicker.js"></script>
+    <!--services-->
+    <script src="/js/services/hostingHouses.service.js"></script>
 
-
-      <!--controller-->
-      <script src="js/controllers/order.controller.js"></script>
+    <!--directive-->
+    <script src="/js/directives/selectCmp.directive.js"></script>
+    <script src="/js/directives/bootsselectpicker.js"></script>
 
 
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-      <!-- Latest compiled and minified CSS -->
-      <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-
-      <!-- Latest compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!--controller-->
+    <script src="js/controllers/order.controller.js"></script>
 
 
-  </head>
-  <body ng-app="app">
-    <div class="main" ng-controller="orderCtl">
-      
-      <div class="row clearfix" id="uiselect1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+
+</head>
+<body ng-app="app">
+<div class="main" ng-controller="orderCtl">
+
+    <div class="row clearfix" id="uiselect1">
         <!--// UI SELECT FIRST INSTANCE START //-->
-         <div class="col col1">
-             <select-component info="hotels"></select-component>
-         </div>
+        <div class="col col1">
+            <select-component info="hotels"></select-component>
+        </div>
         <!--// UI SELECT FIRST INSTANCE END //-->
 
         <!--// UI SELECT SECOND INSTANCE START //-->
-         <div class="col col2">
-             <!--<select-component info="hostels"></select-component>-->
-         </div>
-         <!--// UI SELECT SECOND INSTANCE END //-->         
-      </div>
+        <div class="col col2">
+            <select-component info="hostels"></select-component>
+        </div>
+        <!--// UI SELECT SECOND INSTANCE END //-->
     </div>
-  </body>
+</div>
+</body>
 </html>
