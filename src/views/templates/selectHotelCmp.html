@@ -1,9 +1,16 @@
 
-<select bootselectpicker class="form-control selectpicker"
-        ng-model="itemSelected"
-        ng-options="item.name for item in dataList track by item.id">
-        <!--<option value="">{{dataList[0].name}}</option>-->
-</select>
+<!--<select bootselectpicker class="form-control selectpicker"-->
+        <!--ng-model="itemSelected"-->
+        <!--ng-options="item.name for item in dataList track by item.id">-->
+        <!--&lt;!&ndash;<option value="">{{dataList[0].name}}</option>&ndash;&gt;-->
+<!--</select>-->
+
+<div class="select-component">
+        <P class="dropdown-heading" ng-click="openDropDown()"><span ng-hide="signDropDown" class="glyphicon glyphicon-triangle-top"></span><span ng-show="signDropDown" class="glyphicon glyphicon-triangle-bottom"></span><span class="heading-dropdown-content">חבילות נופש</span></P>
+        <ul class="menu-select" ng-show="showDropDown">
+                <li ng-repeat="item in dataList" ng-click="chooseItem(item)">{{item.name}}</li>
+        </ul>
+</div>
 
 <div class="selectedContainer">
         <p ng-if="itemSelected">id: {{itemSelected.id}}<br>name: {{itemSelected.name}}</p>

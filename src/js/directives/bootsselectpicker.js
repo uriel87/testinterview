@@ -9,7 +9,6 @@ app.directive('bootselectpicker',['$window','hostingHousesService','$timeout', f
                     size: 3,
                     width: "300px"
                 });
-
             });
 
         }
