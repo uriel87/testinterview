@@ -17,28 +17,29 @@ app.directive('selectComponent', ['$window', 'hostingHousesService', function ($
             $scope.itemSelected = null;
             $scope.showDropDown = false
             $scope.signDropDown = true
-            var windowElement = $(document);
+            var everywhere = angular.element($window);
 
-            $scope.openDropDown = function () {
-                console.log("in openDropDown")
-                $scope.signDropDown = !$scope.signDropDown
-                $scope.showDropDown = !$scope.showDropDown
+            $scope.toggleMenu = function (event) {
+                $scope.signDropDown = !$scope.signDropDown;
+                $scope.showDropDown = !$scope.showDropDown;
+                event.stopPropagation();
             }
 
             $scope.chooseItem = function (item) {
-                console.log("in chooseItem: " + item)
                 $scope.itemSelected = item
-                // $scope.signDropDown = true
-                // $scope.showDropDown = false
+                $scope.signDropDown = true
+                $scope.showDropDown = false
             }
 
-            angular.element(windowElement).on('click', function () {
-                console.log("in angular.element($window)")
-                $scope.signDropDown = true;
-                $scope.showDropDown = false;
-                console.log("$scope.signDropDown: " + $scope.showDropDown)
-                console.log("$scope.signDropDown: " + $scope.signDropDown)
-            })
+            everywhere.on('click', function(){
+                if($scope.showDropDown){
+                    $scope.showDropDown = false;
+                    $scope.signDropDown = true;
+                }
+                // console.log("$scope.signDropDown: " + $scope.showDropDown)
+                // console.log("$scope.signDropDown: " + $scope.signDropDown)
+                $scope.$apply();
+            });
 
         }
     }

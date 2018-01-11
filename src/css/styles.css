@@ -123,10 +123,13 @@ upgraded by Alex Robinson
 /*border-right: 4px solid transparent;*/
 /*}*/
 
-/*.selectedContainer {*/
-/*position: relative;*/
-/*margin-top: 20px;*/
-/*}*/
+.selected-container {
+	position: relative;
+	display: inline-block;
+	margin-top: 20px;
+	max-width: 300px;
+}
+
 
 
 .select-component {
@@ -138,8 +141,8 @@ upgraded by Alex Robinson
 .dropdown-heading{
 	font-size: 14px;
 	color: #666;
-	background: linear-gradient(#f2f2f2, #f1f1f1, #ececec);
-	border: 1px solid #666;
+	background: linear-gradient(#fdfdfd, #eee);
+	border: 1px solid #9A9C94;
 	overflow: auto;
 	height: 45px;
 	border-radius: 10px;
@@ -149,19 +152,21 @@ upgraded by Alex Robinson
 }
 
 .dropdown-heading:hover{
-	border: 1px solid #ffc300;
+	border: 1px solid #fdca22;
 }
 
 .dropdown-heading .heading-dropdown-content {
 	float: right;
-	margin-right: 10px;
+	margin-right: 12px;
 	line-height: 3;
+	font-size: 14px;
 }
 
 .dropdown-heading span{
 	float: left;
-	margin-left: 10px;
-	line-height: 3;
+	margin-left: 9px;
+	line-height: 5;
+	font-size: 8px;
 }
 
 .menu-select {
@@ -170,9 +175,11 @@ upgraded by Alex Robinson
 	padding: 0;
 	text-align: right;
 	z-index: 999;
-	border-left: 1px solid #f3f2f2;
-	border-right: 1px solid #f3f2f2;
-	border-bottom: 1px solid #f3f2f2;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	border-radius: 5px;
+	padding-bottom: 3px;
 }
 
 .menu-select li{
@@ -190,7 +197,7 @@ upgraded by Alex Robinson
 }
 
 .menu-select li:hover{
-	background: #ffd8ff;
+	background: #eee2df;
 }
 
 
