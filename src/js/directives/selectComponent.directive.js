@@ -39,7 +39,7 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
                 if($scope.showDropDown == true) {
                     close()
                 } else {
-                    $rootScope.$emit("closeDropDown")
+                    $rootScope.$emit("closeDropDown");
                     open();
                     event.stopPropagation();
                 }
