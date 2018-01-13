@@ -6,13 +6,18 @@
 <!--</select>-->
 
 <div class="select-component">
-        <P class="dropdown-heading" ng-click="toggleMenu($event)"><span ng-hide="signDropDown" class="glyphicon glyphicon-triangle-top"></span><span ng-show="signDropDown" class="glyphicon glyphicon-triangle-bottom"></span><span class="heading-dropdown-content">חבילות נופש</span></P>
-        <ul class="menu-select" ng-show="showDropDown">
+        <button class="btn-dropdown" ng-click="toggleMenu($event)" cs-dropdown="dropdownTwoIsOpen">
+                <span ng-hide="signDropDown" class="glyphicon glyphicon-triangle-top"></span>
+                <span ng-show="signDropDown" class="glyphicon glyphicon-triangle-bottom"></span>
+                <span class="heading-dropdown-content">חבילות נופש</span>
+        </button>
+        <ul class="menu-select" ng-show="showDropDown" >
                 <li ng-repeat="item in dataList" ng-click="chooseItem(item)">{{item.name}}</li>
         </ul>
+        <div class="selected-container">
+                <p ng-show="itemSelected">id: {{itemSelected.id}}<br>שם: {{itemSelected.name}}</p>
+                <p ng-hide="itemSelected">בחר מלון מהרשימה</p>
+        </div>
 </div>
 
-<div class="selected-container">
-        <p ng-if="itemSelected">id: {{itemSelected.id}}<br>שם: {{itemSelected.name}}</p>
-        <p ng-if="!itemSelected">בחר מלון מהרשימה</p>
-</div>
+

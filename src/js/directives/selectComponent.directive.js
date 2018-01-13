@@ -4,7 +4,7 @@
  *
  ******************************/
 
-app.directive('selectComponent', ['$window', 'hostingHousesService', function ($window, hostingHousesService) {
+app.directive('selectComponent', ['$window', '$rootScope','$document', function ($window, $rootScope, $document) {
     return {
         restrict: 'E',
         templateUrl: '../views/templates/selectHotelCmp.html',
@@ -13,32 +13,44 @@ app.directive('selectComponent', ['$window', 'hostingHousesService', function ($
             dataList: '=?info'
         },
         link: function ($scope, $element, $attributes) {
-
             $scope.itemSelected = null;
-            $scope.showDropDown = false
-            $scope.signDropDown = true
-            var everywhere = angular.element($window);
+            $scope.showDropDown = false;
+            $scope.signDropDown = true;
+            var window = angular.element($window);
+
+            $rootScope.$on('closeDropDown', function () {
+                console.log(" $rootScope.$on close()")
+                close()
+            });
+
+            function close() {
+                $scope.showDropDown = false;
+                $scope.signDropDown = true;
+                $scope.$apply();
+            }
+
+            function open() {
+                $scope.showDropDown = true;
+                $scope.signDropDown = false;
+            }
+
 
             $scope.toggleMenu = function (event) {
-                $scope.signDropDown = !$scope.signDropDown;
-                $scope.showDropDown = !$scope.showDropDown;
-                event.stopPropagation();
-            }
+                if($scope.showDropDown == true) {
+                    close()
+                } else {
+                    $rootScope.$emit("closeDropDown")
+                    open();
+                    event.stopPropagation();
+                }
+            };
 
             $scope.chooseItem = function (item) {
-                $scope.itemSelected = item
-                $scope.signDropDown = true
-                $scope.showDropDown = false
-            }
+                $scope.itemSelected = item;
+            };
 
-            everywhere.on('click', function(){
-                if($scope.showDropDown){
-                    $scope.showDropDown = false;
-                    $scope.signDropDown = true;
-                }
-                // console.log("$scope.signDropDown: " + $scope.showDropDown)
-                // console.log("$scope.signDropDown: " + $scope.signDropDown)
-                $scope.$apply();
+            window.bind('click', function(){
+                close();
             });
 
         }

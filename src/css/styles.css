@@ -124,48 +124,44 @@ upgraded by Alex Robinson
 /*}*/
 
 .selected-container {
-	position: relative;
-	display: inline-block;
-	margin-top: 20px;
-	max-width: 300px;
+	width: 164px;
 }
-
-
 
 .select-component {
 	max-width: 300px;
-	/*width: 170px;*/
-	/*margin: 0 10px;*/
+	position: relative;
+	display: inline-block;
 }
 
-.dropdown-heading{
+.btn-dropdown {
 	font-size: 14px;
 	color: #666;
 	background: linear-gradient(#fdfdfd, #eee);
 	border: 1px solid #9A9C94;
-	overflow: auto;
-	height: 45px;
-	border-radius: 10px;
+	height: 41px;
+	border-radius: 4px;
 	position: relative;
 	max-width: 300px;
-	/*width: 170px;*/
+	width: 164px;
+	padding: 0 9px;
 }
 
-.dropdown-heading:hover{
+.btn-dropdown:hover{
 	border: 1px solid #fdca22;
 }
+.btn-dropdown:focus{
+	outline:0;
+}
 
-.dropdown-heading .heading-dropdown-content {
+.btn-dropdown .heading-dropdown-content {
 	float: right;
-	margin-right: 12px;
-	line-height: 3;
+	line-height: 2;
 	font-size: 14px;
 }
 
-.dropdown-heading span{
+.btn-dropdown span{
 	float: left;
-	margin-left: 9px;
-	line-height: 5;
+	line-height: 3.5;
 	font-size: 8px;
 }
 
@@ -173,13 +169,14 @@ upgraded by Alex Robinson
 	height: 100px;
 	overflow-x: hidden;
 	padding: 0;
-	text-align: right;
 	z-index: 999;
 	border-left: 1px solid #eee;
 	border-right: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	border-radius: 5px;
-	padding-bottom: 3px;
+	width: 163px;
+	position: absolute;
+	background-color: #fff;
 }
 
 .menu-select li{
@@ -193,11 +190,11 @@ upgraded by Alex Robinson
 	overflow: hidden;
 	cursor: pointer;
 	direction: rtl;
-	margin-right: 3px;
+	margin-right: 5px;
 }
 
 .menu-select li:hover{
-	background: #eee2df;
+	background: #f3eeed;
 }
 
 
