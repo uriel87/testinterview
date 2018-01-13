@@ -26,7 +26,6 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
             function close() {
                 $scope.showDropDown = false;
                 $scope.signDropDown = true;
-                $scope.$apply();
             }
 
             function open() {
@@ -51,6 +50,7 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
 
             window.bind('click', function(){
                 close();
+                $scope.$apply();
             });
 
         }
