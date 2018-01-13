@@ -37,11 +37,11 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
             $scope.toggleMenu = function (event) {
                 if($scope.showDropDown == true) {
                     close()
-                } else {
-                    $rootScope.$emit("closeDropDown");
-                    open();
-                    event.stopPropagation();
+                    return;
                 }
+                $rootScope.$emit("closeDropDown");
+                open();
+                event.stopPropagation();
             };
 
             $scope.chooseItem = function (item) {
