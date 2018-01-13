@@ -1,12 +1,6 @@
 
-<!--<select bootselectpicker class="form-control selectpicker"-->
-        <!--ng-model="itemSelected"-->
-        <!--ng-options="item.name for item in dataList track by item.id">-->
-        <!--&lt;!&ndash;<option value="">{{dataList[0].name}}</option>&ndash;&gt;-->
-<!--</select>-->
-
 <div class="select-component">
-        <button class="btn-dropdown" ng-click="toggleMenu($event)" cs-dropdown="dropdownTwoIsOpen">
+        <button class="btn-dropdown" ng-click="toggleMenu()">
                 <span ng-hide="signDropDown" class="glyphicon glyphicon-triangle-top"></span>
                 <span ng-show="signDropDown" class="glyphicon glyphicon-triangle-bottom"></span>
                 <span class="heading-dropdown-content">חבילות נופש</span>

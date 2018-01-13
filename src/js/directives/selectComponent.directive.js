@@ -18,8 +18,8 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
             $scope.signDropDown = true;
             var window = angular.element($window);
 
+            // tell to all directive to close
             $rootScope.$on('closeDropDown', function () {
-                console.log(" $rootScope.$on close()")
                 close()
             });
 
@@ -34,12 +34,12 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
             }
 
 
-            $scope.toggleMenu = function (event) {
+            $scope.toggleMenu = function () {
                 if($scope.showDropDown == true) {
                     close()
                     return;
                 }
-                $rootScope.$emit("closeDropDown");
+                $rootScope.$emit("closeDropDown"); // call to all directive to close drop down menu
                 open();
                 event.stopPropagation();
             };
@@ -48,6 +48,8 @@ app.directive('selectComponent', ['$window', '$rootScope','$document', function 
                 $scope.itemSelected = item;
             };
 
+
+            // close directive when click on window area
             window.bind('click', function(){
                 close();
                 $scope.$apply();
