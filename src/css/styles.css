@@ -49,6 +49,8 @@ body {
 
 
 
+
+
 /* ------------  CLEARING  --
 This technique was originally developed by Tony Aslett,
 upgraded by Alex Robinson
@@ -57,7 +59,7 @@ upgraded by Alex Robinson
 .clearfix:after {
 	content: ".";
 	display: block;
-	height: 0px;
+	height: 0;
 	clear: both;
 	visibility: hidden;}
 .clearfix {display: inline-table;}
@@ -71,7 +73,7 @@ upgraded by Alex Robinson
 
 
 .selected-container {
-	width: 164px;
+	max-width: 100%;
 }
 
 .select-component {
@@ -117,16 +119,38 @@ upgraded by Alex Robinson
 	overflow-x: hidden;
 	padding: 0;
 	z-index: 999;
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	border: 1px solid #f3eeed;
+	border-top:0;
 	border-radius: 5px;
 	width: 163px;
 	position: absolute;
 	background-color: #fff;
 }
 
+
+
+.menu-select::-webkit-scrollbar-track
+{
+
+	background-color: #fdfdfd;
+}
+
+.menu-select::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #fdfdfd;
+}
+
+.menu-select::-webkit-scrollbar-thumb {
+	background-color: #f3eeed;
+}
+
+
+.menu-select li:first-child{
+	padding-top: 6px;
+}
 .menu-select li{
+	padding: 2px 5px 2px 0;
 	font-size: 12px;
 	color: #666;
 	list-style-type: none;
@@ -137,7 +161,6 @@ upgraded by Alex Robinson
 	overflow: hidden;
 	cursor: pointer;
 	direction: rtl;
-	margin-right: 5px;
 }
 
 .menu-select li:hover{

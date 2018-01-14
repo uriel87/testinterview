@@ -2,6 +2,7 @@
 
 app.controller('orderController', ['$scope','hostingHousesService', function ($scope, hostingHousesService) {
 
+   
     hostingHousesService.getHotels().then(function(data){
         $scope.hotels = data
     });

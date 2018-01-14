@@ -10,12 +10,14 @@ app.directive('selectComponent', ['$window', '$rootScope', function ($window, $r
         templateUrl: '../views/templates/selectHotelCmp.html',
         transclude: true,
         scope: {
-            dataList: '=?info'
+            dataList: '=?info',
+            selectLabel: '@label',
+            selectPlaceholder: '@placeholder'
         },
         link: function ($scope, $element, $attributes) {
             $scope.itemSelected = null;
             $scope.showDropDown = false;
-            $scope.signDropDown = true;
+            // $scope.signDropDown = true;
             var window = angular.element($window);
 
             // tell to all directive to close
@@ -25,18 +27,16 @@ app.directive('selectComponent', ['$window', '$rootScope', function ($window, $r
 
             function close() {
                 $scope.showDropDown = false;
-                $scope.signDropDown = true;
             }
 
             function open() {
                 $scope.showDropDown = true;
-                $scope.signDropDown = false;
             }
 
 
             $scope.toggleMenu = function () {
                 if($scope.showDropDown == true) {
-                    close()
+                    close();
                     return;
                 }
                 $rootScope.$emit("closeDropDown"); // call to all directive to close drop down menu

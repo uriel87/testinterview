@@ -1,16 +1,16 @@
 
 <div class="select-component">
         <button class="btn-dropdown" ng-click="toggleMenu()">
-                <span ng-hide="signDropDown" class="glyphicon glyphicon-triangle-top"></span>
-                <span ng-show="signDropDown" class="glyphicon glyphicon-triangle-bottom"></span>
-                <span class="heading-dropdown-content">חבילות נופש</span>
+                <span ng-hide=showDropDown class="glyphicon glyphicon-triangle-top"></span>
+                <span ng-show=showDropDown class="glyphicon glyphicon-triangle-bottom"></span>
+                <span class="heading-dropdown-content">{{::selectPlaceholder}}</span>
         </button>
-        <ul class="menu-select" ng-show="showDropDown" >
-                <li ng-repeat="item in dataList" ng-click="chooseItem(item)">{{item.name}}</li>
+        <ul class="menu-select" ng-show=showDropDown >
+                <li ng-repeat="item in dataList" ng-click="chooseItem(item)">{{::item.name}}</li>
         </ul>
         <div class="selected-container">
                 <p ng-show="itemSelected">id: {{itemSelected.id}}<br>שם: {{itemSelected.name}}</p>
-                <p ng-hide="itemSelected">בחר מלון מהרשימה</p>
+                <p ng-hide="itemSelected">{{::selectLabel}}</p>
         </div>
 </div>
 
