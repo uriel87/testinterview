@@ -4,7 +4,7 @@
  *
  ******************************/
 
-app.directive('selectComponent', ['$window', '$rootScope','$document', function ($window, $rootScope, $document) {
+app.directive('selectComponent', ['$window', '$rootScope', function ($window, $rootScope) {
     return {
         restrict: 'E',
         templateUrl: '../views/templates/selectHotelCmp.html',
